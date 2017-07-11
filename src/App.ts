@@ -5,7 +5,6 @@ import * as path from "path";
 
 class App {
 
-    // ref to Express instance
     public express: express.Application;
 
     constructor() {
@@ -14,7 +13,6 @@ class App {
         this.routes();
     }
 
-    // Configure Express middleware.
     private middleware(): void {
         this.express.use(logger("dev"));
         this.express.use(bodyParser.json());
