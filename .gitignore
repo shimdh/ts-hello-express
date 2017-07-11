@@ -83,3 +83,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# transfiled directory target
+.vscode
+
+package-lock.json
