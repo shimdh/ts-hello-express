@@ -13,6 +13,11 @@
         //     true,
         //     120
         // ]
+        "no-console": [
+            false,
+            "log",
+            "error"
+        ]
     },
     "rulesDirectory": []
 }
