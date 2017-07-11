@@ -13,13 +13,13 @@ class App {
         this.routes();
     }
 
-    private middleware(): void {
+    private middleware() {
         this.express.use(logger("dev"));
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({ extended: false }));
     }
 
-    private routes(): void {
+    private routes() {
         const router = express.Router();
         router.get("/", (req, res, next) => {
             res.json({

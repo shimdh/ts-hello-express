@@ -9,9 +9,9 @@ const port = normalizePort(process.env.PORT || 3000);
 App.set("port", port);
 
 const server = http.createServer(App);
-server.listen(port);
 server.on("error", onError);
 server.on("listening", onListening);
+server.listen(port);
 
 function normalizePort(val: number | string): number | string | boolean {
     const port: number = (typeof val === "string") ? parseInt(val, 10) : val;
@@ -24,7 +24,7 @@ function normalizePort(val: number | string): number | string | boolean {
     }
 }
 
-function onError(error: NodeJS.ErrnoException): void {
+function onError(error: NodeJS.ErrnoException) {
     if (error.syscall !== "listen") {
         throw error;
     }
@@ -43,7 +43,7 @@ function onError(error: NodeJS.ErrnoException): void {
     }
 }
 
-function onListening(): void {
+function onListening() {
     const addr = server.address();
     const bind = (typeof addr === "string") ? `pipe ${addr}` : `port ${addr.port}`;
     debug(`Listening on ${bind}`);
