@@ -3,6 +3,7 @@ import * as express from "express";
 import * as logger from "morgan";
 import * as path from "path";
 
+import UserRouter from "./routes/UserRouter";
 class App {
 
     public express: express.Application;
@@ -27,6 +28,7 @@ class App {
             });
         });
         this.express.use("/", router);
+        this.express.use("/api/v1/users", UserRouter);
     }
 
 }
